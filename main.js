@@ -1,17 +1,18 @@
-const button = document.querySelector('ul button');
-
-button.addEventListener('click', async (event) => {
-    try {
-        // Get the filename from the clicked button's id
-        const filename = event.target.id;
-
-        // Read the file from URL
-        const inputArray = await readFromUrl(filename);
-
-        iterateOverArray(inputArray);
-    } catch (error) {
-        console.error('Error:', error);
-    }
+const buttons = document.querySelectorAll('ul button');
+buttons.forEach(button => {
+    button.addEventListener('click', async (event) => {
+        try {
+            // Get the filename from the clicked button's id
+            const filename = event.target.id;
+    
+            // Read the file from URL
+            const inputArray = await readFromUrl(filename);
+    
+            iterateOverArray(inputArray);
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    });
 });
 
 async function readFromUrl(filename) {
