@@ -16,7 +16,7 @@ button.addEventListener('click', async (event) => {
 
 async function readFromUrl(filename) {
     try {
-        const response = await fetch(`https://github.com/geetsswain/study-resources-links/blob/76c2f28b1ddc810a7eb6733a9b4a2b389119c718/${filename}.txt`)
+        const response = await fetch(`https://raw.githubusercontent.com/geetsswain/study-resources-links/refs/heads/main/${filename}.txt`)
         
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
